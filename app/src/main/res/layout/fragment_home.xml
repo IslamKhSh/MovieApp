@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.github.islamkhsh.movie_app.ui.fragments.home.HomeViewModel" />
@@ -37,17 +38,16 @@
                     android:paddingEnd="@dimen/space_6"
                     android:paddingTop="@dimen/space_6"
                     android:paddingBottom="@dimen/space_6"
-                    style="@style/clickable_view"
-                    />
-                
-                
+                    style="@style/clickable_view" />
+
+
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="?attr/actionBarSize"
                     android:layout_weight="1"
                     android:paddingTop="@dimen/space_6"
                     android:paddingBottom="@dimen/space_6"
-                    android:src="@drawable/ic_imdb_logo"/>
+                    android:src="@drawable/ic_imdb_logo" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -56,8 +56,7 @@
                     android:src="@drawable/ic_favorite"
                     style="@style/clickable_view"
                     android:padding="@dimen/space_6"
-                    android:layout_marginEnd="@dimen/space_6"
-                    />
+                    android:layout_marginEnd="@dimen/space_6" />
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -67,7 +66,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/recycler_categories"
             tools:listitem="@layout/item_movie_category"
-            app:layout_constraintTop_toBottomOf="@id/toolbar_home"/>
+            app:layout_constraintTop_toBottomOf="@id/toolbar_home" />
 
 
         <include

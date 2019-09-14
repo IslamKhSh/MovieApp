@@ -5,50 +5,62 @@
     android:id="@+id/main_navigation.xml"
     app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/homeFragment"
+    <fragment
+        android:id="@+id/homeFragment"
         android:name="com.github.islamkhsh.movie_app.ui.fragments.home.HomeFragment"
         tools:layout="@layout/fragment_home">
 
-        <action android:id="@+id/action_homeFragment_to_movieDetailsFragment"
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment">
 
-            <argument android:name="movie_id"
-                app:argType="integer"/>
+            <argument
+                android:name="movie_id"
+                app:argType="integer" />
 
-            <argument android:name="movie_title"
-                app:argType="string"/>
+            <argument
+                android:name="movie_title"
+                app:argType="string" />
 
         </action>
 
-        <action android:id="@+id/action_homeFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
 
     </fragment>
 
-    <fragment android:id="@+id/movieDetailsFragment"
+    <fragment
+        android:id="@+id/movieDetailsFragment"
         android:name="com.github.islamkhsh.movie_app.ui.fragments.movie_details.MovieDetailsFragment"
         tools:layout="@layout/fragment_movie_details">
 
-        <argument android:name="movie_id"
-            app:argType="integer"/>
+        <argument
+            android:name="movie_id"
+            app:argType="integer" />
 
-        <argument android:name="movie_title"
-            app:argType="string"/>
+        <argument
+            android:name="movie_title"
+            app:argType="string" />
 
     </fragment>
 
-    <fragment android:id="@+id/favoritesFragment"
+    <fragment
+        android:id="@+id/favoritesFragment"
         android:name="com.github.islamkhsh.movie_app.ui.fragments.fav.FavoritesFragment"
         tools:layout="@layout/fragment_favorites">
 
-        <action android:id="@+id/action_favoritesFragment_to_movieDetailsFragment"
+        <action
+            android:id="@+id/action_favoritesFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment">
 
-            <argument android:name="movie_id"
-                app:argType="integer"/>
+            <argument
+                android:name="movie_id"
+                app:argType="integer" />
 
-            <argument android:name="movie_title"
-                app:argType="string"/>
+            <argument
+                android:name="movie_title"
+                app:argType="string" />
 
         </action>
 

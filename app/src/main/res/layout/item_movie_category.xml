@@ -12,8 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,14 +30,12 @@
                 android:layout_weight="1"
                 android:id="@+id/tv_movie_category_name"
                 tools:text="Popular"
-                android:textSize="@dimen/large_text"
-                />
+                android:textSize="@dimen/large_text" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/img_category_arrow"
-                />
+                android:id="@+id/img_category_arrow" />
 
         </LinearLayout>
 
@@ -47,7 +44,7 @@
             android:layout_height="@dimen/space_1"
             android:id="@+id/divider_header"
             android:background="@android:color/white"
-            app:layout_constraintTop_toBottomOf="@id/container_category_name"/>
+            app:layout_constraintTop_toBottomOf="@id/container_category_name" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="wrap_content"
@@ -55,7 +52,7 @@
             android:id="@+id/recycler_movies"
             android:background="@color/colorAccent"
             app:layout_constraintTop_toBottomOf="@id/divider_header"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

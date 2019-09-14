@@ -5,9 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
 
-        <variable name="viewModel"
+        <variable
+            name="viewModel"
             type="com.github.islamkhsh.movie_app.ui.fragments.fav.FavoritesViewModel" />
     </data>
 
@@ -60,8 +62,7 @@
             android:id="@+id/recycler_fav_movies"
             android:layout_margin="@dimen/space_6"
             tools:listitem="@layout/item_favorite_movie"
-            app:layout_constraintTop_toBottomOf="@id/toolbar_favorites"
-            />
+            app:layout_constraintTop_toBottomOf="@id/toolbar_favorites" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,8 +75,7 @@
             app:layout_constraintTop_toBottomOf="@id/toolbar_favorites"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <include
             layout="@layout/progress_bar"

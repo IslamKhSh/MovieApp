@@ -16,42 +16,38 @@
         android:layout_margin="@dimen/space_6"
         android:foreground="?attr/selectableItemBackground"
         app:cardCornerRadius="@dimen/cardView_corner_radius"
-        app:cardElevation="@dimen/shadow_medium"
-        >
+        app:cardElevation="@dimen/shadow_medium">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/space_12"
-            >
+            android:padding="@dimen/space_12">
 
 
-    <ImageView
-        android:id="@+id/img_poster"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_6"
-        android:adjustViewBounds="true"
-        tools:src="@drawable/ic_vertical_place_holder"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent=".25"
-        />
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_6"
+                android:adjustViewBounds="true"
+                tools:src="@drawable/ic_vertical_place_holder"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".25" />
 
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_title"
-            android:layout_marginStart="@dimen/space_12"
-            android:textSize="@dimen/large_text"
-            android:textStyle="bold"
-            tools:text="Harry Potter"
-            app:layout_constraintStart_toEndOf="@id/img_poster"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_movie_title"
+                android:layout_marginStart="@dimen/space_12"
+                android:textSize="@dimen/large_text"
+                android:textStyle="bold"
+                tools:text="Harry Potter"
+                app:layout_constraintStart_toEndOf="@id/img_poster"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_movie_overview"

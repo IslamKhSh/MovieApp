@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewHolder"
             type="com.github.islamkhsh.movie_app.ui.adapters.MoviesReviewsAdapter.ItemMovieReviewViewHolder" />
     </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_6"
         app:cardCornerRadius="@dimen/cardView_corner_radius"
         app:cardElevation="@dimen/shadow_medium"
-        android:foreground="?attr/selectableItemBackground"
-        >
+        android:foreground="?attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +31,7 @@
                 android:layout_marginBottom="@dimen/space_6"
                 android:textSize="@dimen/medium_text"
                 android:textStyle="italic"
-                tools:text="Islam Khaled"/>
+                tools:text="Islam Khaled" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                 android:layout_marginBottom="@dimen/space_6"
                 android:textSize="@dimen/huge_text"
                 android:maxLines="5"
-                tools:text="Very good movie with a great cast"/>
+                tools:text="Very good movie with a great cast" />
 
         </LinearLayout>
 

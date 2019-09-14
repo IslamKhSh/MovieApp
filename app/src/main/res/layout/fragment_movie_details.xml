@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="com.github.islamkhsh.movie_app.ui.fragments.movie_details.MovieDetailsViewModel" />
@@ -58,8 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/space_6"
                     android:padding="@dimen/space_6"
-                    android:src="@drawable/ic_share_black_24dp"
-                    />
+                    android:src="@drawable/ic_share_black_24dp" />
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -187,8 +188,7 @@
                     tools:listitem="@layout/item_video"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/fab_fav"
-                    app:layout_constraintTop_toBottomOf="@id/tv_videos_title"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/tv_videos_title" />
 
                 <TextView
                     android:id="@+id/tv_reviews_title"
@@ -207,7 +207,7 @@
                     android:id="@+id/recycler_reviews"
                     android:layout_margin="@dimen/space_6"
                     tools:listitem="@layout/item_review"
-                    app:layout_constraintTop_toBottomOf="@id/tv_reviews_title"/>
+                    app:layout_constraintTop_toBottomOf="@id/tv_reviews_title" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
