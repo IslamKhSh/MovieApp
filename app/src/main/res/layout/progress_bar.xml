@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.github.islamkhsh.movie_app.ui.base.BaseViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_progressBar"
+        android:elevation="@dimen/space_10"
+        android:focusable="true"
+        android:clickable="true"
+        android:visibility="@{viewModel.isLoading() ? View.VISIBLE : View.GONE}"
+        tools:ignore="UnusedAttribute">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">Movie App</string>
+
+    <string name="msg_error_connection">Error in connection</string>
+    <string name="msg_something_error">Something error</string>
+    <string name="msg_server_error">Server error… please try again</string>
+    <string name="no_internet">No internet connection</string>
+
+    <string name="tv_change_lang">ع</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="_10">/10</string>
+    <string name="trailers">Trailers:</string>
+    <string name="reviews">Reviews:</string>
+    <string name="by">By:</string>
+    <string name="favorites">Favorites</string>
+    <string name="no_favorite_movies">You don\'t have any favorite movies yet</string>
+
+</resources>

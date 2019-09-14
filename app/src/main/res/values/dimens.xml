@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_1">@dimen/x1dp</dimen>
+    <dimen name="space_2">@dimen/x2dp</dimen>
+    <dimen name="space_3">@dimen/x3dp</dimen>
+    <dimen name="space_4">@dimen/x4dp</dimen>
+    <dimen name="space_5">@dimen/x5dp</dimen>
+    <dimen name="space_6">@dimen/x6dp</dimen>
+    <dimen name="space_8">@dimen/x8dp</dimen>
+    <dimen name="space_10">@dimen/x10dp</dimen>
+    <dimen name="space_12">@dimen/x12dp</dimen>
+    <dimen name="space_15">@dimen/x15dp</dimen>
+    <dimen name="space_16">@dimen/x16dp</dimen>
+    <dimen name="space_18">@dimen/x18dp</dimen>
+    <dimen name="space_20">@dimen/x20dp</dimen>
+    <dimen name="space_24">@dimen/x24dp</dimen>
+    <dimen name="space_28">@dimen/x28dp</dimen>
+    <dimen name="space_32">@dimen/x32dp</dimen>
+    <dimen name="space_36">@dimen/x36dp</dimen>
+    <dimen name="space_40">@dimen/x40dp</dimen>
+    <dimen name="space_50">@dimen/x50dp</dimen>
+    <dimen name="space_60">@dimen/x60dp</dimen>
+
+    <dimen name="cardView_corner_radius">@dimen/x5dp</dimen>
+    <dimen name="shadow_medium">@dimen/x4dp</dimen>
+    <dimen name="medium_text">@dimen/x14sp</dimen>
+    <dimen name="large_text">@dimen/x16sp</dimen>
+    <dimen name="huge_text">@dimen/x18sp</dimen>
+    <dimen name="very_huge_text">@dimen/x26sp</dimen>
+
+
+</resources>

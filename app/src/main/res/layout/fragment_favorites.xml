@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable name="viewModel"
+            type="com.github.islamkhsh.movie_app.ui.fragments.fav.FavoritesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_favorites"
+            style="@style/toolbarStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/clickable_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.onUpBtnClicked()}"
+                    android:paddingTop="@dimen/space_6"
+                    android:paddingEnd="@dimen/space_6"
+                    android:paddingBottom="@dimen/space_6"
+                    android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_toolbar_movie_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_6"
+                    android:layout_marginEnd="@dimen/space_6"
+                    android:layout_weight="1"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:textSize="@dimen/huge_text"
+                    android:textStyle="bold"
+                    android:text="@string/favorites" />
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler_fav_movies"
+            android:layout_margin="@dimen/space_6"
+            tools:listitem="@layout/item_favorite_movie"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_favorites"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_24"
+            android:text="@string/no_favorite_movies"
+            android:textSize="@dimen/huge_text"
+            android:gravity="center"
+            android:visibility="@{viewModel.isThereFavMovies() ? View.GONE : View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_favorites"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <include
+            layout="@layout/progress_bar"
+            app:viewModel="@{viewModel}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

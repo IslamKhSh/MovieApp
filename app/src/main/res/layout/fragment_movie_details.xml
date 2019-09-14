@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.github.islamkhsh.movie_app.ui.fragments.movie_details.MovieDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_details"
+            style="@style/toolbarStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/clickable_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.onUpBtnClicked()}"
+                    android:paddingTop="@dimen/space_6"
+                    android:paddingEnd="@dimen/space_6"
+                    android:paddingBottom="@dimen/space_6"
+                    android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_toolbar_movie_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_6"
+                    android:layout_marginEnd="@dimen/space_6"
+                    android:layout_weight="1"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:textSize="@dimen/huge_text"
+                    android:textStyle="bold"
+                    tools:text="Harry Potter" />
+
+                <ImageView
+                    android:id="@+id/img_share"
+                    style="@style/clickable_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_6"
+                    android:padding="@dimen/space_6"
+                    android:src="@drawable/ic_share_black_24dp"
+                    />
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="@{viewModel.isDataLoaded() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_details">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:imageBannerUrl="@{viewModel.bannerUrl}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:adjustViewBounds="true"
+                    tools:src="@drawable/ic_place_holder" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:tint="@color/colorPrimary"
+                    android:src="@{viewModel.isFavMovie() ? @drawable/ic_remove_fav : @drawable/ic_favorite_border}"
+                    android:onClick="@{()-> viewModel.onFabFavClicked()}"
+                    app:layout_constraintBottom_toBottomOf="@id/img_banner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_banner" />
+
+                <ImageView
+                    android:id="@+id/img_poster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:adjustViewBounds="true"
+                    app:imageUrl="@{viewModel.posterUrl}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fab_fav"
+                    app:layout_constraintBottom_toBottomOf="@id/container_details"
+                    tools:src="@drawable/ic_vertical_place_holder" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:orientation="vertical"
+                    android:id="@+id/container_details"
+                    app:layout_constraintStart_toEndOf="@id/img_poster"
+                    app:layout_constraintTop_toBottomOf="@id/fab_fav">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_6"
+                        android:textSize="@dimen/huge_text"
+                        android:textStyle="bold"
+                        android:text="@{viewModel.movieTitle}"
+                        tools:text="Harry Potter" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/space_6"
+                        android:textSize="@dimen/large_text"
+                        app:year="@{viewModel.movieReleaseDate}"
+                        tools:text="2010" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/space_6"
+                            android:textSize="@dimen/very_huge_text"
+                            app:rate="@{viewModel.movieRate}"
+                            tools:text="7.3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_10"
+                            android:textSize="@dimen/medium_text" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_movie_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_12"
+                    android:textSize="@dimen/medium_text"
+                    android:text="@{viewModel.movieOverview}"
+                    app:layout_constraintTop_toBottomOf="@id/img_poster"
+                    tools:text="bla bla bla" />
+
+                <TextView
+                    android:id="@+id/tv_videos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_12"
+                    android:text="@string/trailers"
+                    android:textSize="@dimen/large_text"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/img_poster"
+                    app:layout_constraintTop_toBottomOf="@id/tv_movie_overview" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_6"
+                    android:id="@+id/recycler_videos"
+                    tools:listitem="@layout/item_video"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/fab_fav"
+                    app:layout_constraintTop_toBottomOf="@id/tv_videos_title"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_reviews_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_12"
+                    android:text="@string/reviews"
+                    android:textSize="@dimen/large_text"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/img_poster"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_videos" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recycler_reviews"
+                    android:layout_margin="@dimen/space_6"
+                    tools:listitem="@layout/item_review"
+                    app:layout_constraintTop_toBottomOf="@id/tv_reviews_title"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            layout="@layout/progress_bar"
+            app:viewModel="@{viewModel}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

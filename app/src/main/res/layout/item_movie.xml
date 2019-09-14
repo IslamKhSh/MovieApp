@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewHolder"
+            type="com.github.islamkhsh.movie_app.ui.adapters.MoviesPagedAdapter.ItemMovieViewHolder" />
+    </data>
+
+    <ImageView
+        android:id="@+id/img_poster"
+        style="@style/clickable_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_6"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+
+</layout>
